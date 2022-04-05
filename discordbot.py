@@ -13,7 +13,7 @@ async def on_command_error(ctx, error):
 
 
 @bot.command()
-async def p(ctx):
+async def ping(ctx):
     await ctx.send('pong')
 
 
