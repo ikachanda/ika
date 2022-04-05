@@ -2,7 +2,7 @@ from discord.ext import commands
 from os import getenv
 import traceback
 
-bot = commands.Bot()
+bot = commands.Bot(command_prefix='')
 
 
 @bot.event
