@@ -16,6 +16,10 @@ bot = commands.Bot(command_prefix='')
 async def ping(ctx):
     await ctx.send('pong')
 
+@bot.command()
+async def ap(ctx, *args):
+    await ctx.send('https://uniteapi.dev/p/{args}')
+
 
 token = getenv('DISCORD_BOT_TOKEN')
 bot.run(token)
