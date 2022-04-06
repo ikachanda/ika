@@ -20,7 +20,7 @@ async def ping(ctx):
 async def ap(ctx, *args):
     arguments = args
     for val in arguments:
-    await ctx.send(f'https://uniteapi.dev/p/val')
+    await ctx.send(f'https://uniteapi.dev/p/{val}')
 
 
 token = getenv('DISCORD_BOT_TOKEN')
