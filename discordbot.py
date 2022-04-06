@@ -37,7 +37,7 @@ async def te(ctx):
     embed.set_image(url="https://image.example.com/main.png") # 大きな画像タイルを設定できる
     embed.set_footer(text=f"Requested {message.author.name}")
 
-    await ctx.send('embed = embed')
+    await ctx.send(embed = embed)
 
 
 token = getenv('DISCORD_BOT_TOKEN')
