@@ -27,7 +27,7 @@ async def ap(ctx, *args):
 
 @bot.command()
 async def te(ctx):
-    embed=discord.Embed(color=0xf7e37e, timestamp=datetime.datetime.utcnow())
+    embed=discord.Embed(color=0xf7e37e, timestamp=datetime.utcnow())
     embed.add_field(name="スプラシューター", value="いいよ", inline=False)
     embed.set_footer(text="て")
     
