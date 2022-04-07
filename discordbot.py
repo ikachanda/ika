@@ -30,7 +30,7 @@ async def te(ctx):
     embed.add_field(name="スプラシューター", value="いいよ", inline=False)
     embed.set_footer(text="こんにちわ")
     
-    await ctx.send(embed = embed)
+    await ctx.send('embed = embed')
 
 
 token = getenv('DISCORD_BOT_TOKEN')
