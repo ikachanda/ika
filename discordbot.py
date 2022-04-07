@@ -2,6 +2,7 @@ from discord.ext import commands
 from os import getenv
 import traceback
 import discord
+import datetime
 
 bot = commands.Bot(command_prefix='')
 
@@ -29,7 +30,7 @@ async def te(ctx):
     embed=discord.Embed(color=0xf7e37e)
     embed.set_author(name="私だ")
     embed.add_field(name="スプラシューター", value="いいよ", inline=False)
-    embed.set_footer(text="こんにちわ")
+    embed.set_footer(text=datetime.datetime.now())
     
     await ctx.send(embed = embed)
 
