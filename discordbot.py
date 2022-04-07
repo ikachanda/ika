@@ -26,10 +26,10 @@ async def ap(ctx, *args):
     await ctx.send("\n".join(api))
 
 @bot.command()
-async def te(ctx, name):
+async def te(ctx):
     embed=discord.Embed(color=0xf7e37e, timestamp=datetime.datetime.utcnow())
     embed.add_field(name="スプラシューター", value="いいよ", inline=False)
-    embed.set_footer(text=f"{name}")
+    embed.set_footer(text="て")
     
     await ctx.send(embed = embed)
 
