@@ -2,7 +2,7 @@ from discord.ext import commands
 from os import getenv
 import traceback
 import discord
-import datetime
+from datetime import datetime
 
 bot = commands.Bot(command_prefix='')
 
@@ -28,7 +28,6 @@ async def ap(ctx, *args):
 @bot.command()
 async def te(ctx):
     embed=discord.Embed(color=0xf7e37e, timestamp=datetime.utcnow())
-    embed.set_author(name="私だ")
     embed.add_field(name="スプラシューター", value="いいよ", inline=False)
     embed.set_footer(text='なんでだろう')
     
