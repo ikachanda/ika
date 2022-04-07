@@ -29,7 +29,7 @@ async def ap(ctx, *args):
 async def te(ctx, name):
     embed=discord.Embed(color=0xf7e37e, timestamp=datetime.datetime.utcnow())
     embed.add_field(name="スプラシューター", value="いいよ", inline=False)
-    embed.set_footer(text=name)
+    embed.set_footer(text=f"{name}")
     
     await ctx.send(embed = embed)
 
