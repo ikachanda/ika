@@ -25,13 +25,11 @@ async def ap(ctx, *args):
 
 @bot.command()
 async def te(ctx):
-    embed = discord.Embed( # Embedを定義する
-                          title = "スプラトゥーン",# タイトル
-                          color = 0x00ff00, # フレーム色指定(今回は緑)
-                          description = "とりあえずのテスト", # Embedの説明文 必要に応じて
-                          )
-
-
+    embed=discord.Embed(color=0xf7e37e)
+    embed.set_author(name="私だ")
+    embed.add_field(name="スプラシューター", value="いいよ", inline=False)
+    embed.set_footer(text="こんにちわ")
+    
     await ctx.send(embed = embed)
 
 
