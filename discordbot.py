@@ -32,7 +32,7 @@ async def te(ctx):
     embed.set_footer(text = f"Requested by {ctx.author.name}")
     
     await ctx.send(embed = embed)
-p
+
 
 token = getenv('DISCORD_BOT_TOKEN')
 bot.run(token)
