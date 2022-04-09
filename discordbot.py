@@ -17,6 +17,7 @@ bot = commands.Bot(command_prefix='')
 @bot.command()
 async def ping(ctx):
     await ctx.message.delete()
+    await ctx.send("ポンポーン")
 
 @bot.command()
 async def ap(ctx, *args):
