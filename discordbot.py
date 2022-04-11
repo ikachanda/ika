@@ -22,13 +22,13 @@ cur = conn.cursor()
 
 def random_buki():
     cur.execute('select name, url from buki ORDER BY RANDOM() limit 1')
-    name, url = cur.fetchall()[0]
-    return name, url
+    name, url = cur.fetchall()
+    return (name, url)
 
 @bot.command()
 async def ping(ctx):
     await ctx.message.delete()
-    buki = random_buki(name, url)
+    name, url = random_buki(name, url)
     await ctx.send(f"ポンポーン{name}")
 
 @bot.command()
