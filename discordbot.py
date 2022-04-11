@@ -28,7 +28,7 @@ def random_buki():
 @bot.command()
 async def ping(ctx):
     await ctx.message.delete()
-    buki = random_buki()
+    buki = random_buki(name, url)
     await ctx.send(f"ポンポーン{name}")
 
 @bot.command()
