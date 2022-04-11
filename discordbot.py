@@ -22,7 +22,7 @@ cur = conn.cursor()
 
 def random_buki():
     cur.execute('select name, url from buki ORDER BY RANDOM() limit 1')
-    name, url = cur.fetchall()
+    name, url = cur.fetchone()
     return (name, url)
 
 @bot.command()
