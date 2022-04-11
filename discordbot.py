@@ -3,6 +3,8 @@ from os import getenv
 import traceback
 import discord
 from datetime import datetime
+import sqlite3
+import os
 
 bot = commands.Bot(command_prefix='')
 
@@ -13,11 +15,22 @@ bot = commands.Bot(command_prefix='')
 #    error_msg = ''.join(traceback.TracebackException.from_exception(orig_error).format())
 #    await ctx.send(error_msg)
 
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+dbname = os.path.join(BASE_DIR, "spl2.sqlite3")
+conn = sqlite3.connect(dbname)
+cur = conn.cursor()
+
+def random_buki():
+    cur.execute('select name, url from buki ORDER BY RANDOM() limit 1')
+    name, url = cur.fetchall()[0]
+    print(name)
+    return name
 
 @bot.command()
 async def ping(ctx):
     await ctx.message.delete()
-    await ctx.send("ポンポーン")
+    buki = random_buki()
+    await ctx.send(f"ポンポーン{buki}")
 
 @bot.command()
 async def ap(ctx, *args):
