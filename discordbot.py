@@ -40,9 +40,8 @@ async def ap(ctx, *args):
 
 @bot.command()
 async def te(ctx):
-    embed=discord.Embed(color=0xf7e37e, timestamp=datetime.utcnow())
-    embed.add_field(name="スプラシューター")
-    embed.set_image(url="https://i.imgur.com/PHP0G4f.png")
+    embed = discord.Embed(title = "スプラシューター", color=0xf7e37e, timestamp=datetime.utcnow())
+    embed.set_image(url = "https://i.imgur.com/PHP0G4f.png")
     embed.set_footer(text = f"Requested by {ctx.author.name}",icon_url=ctx.author.avatar_url)
     await ctx.send(embed = embed)
 
