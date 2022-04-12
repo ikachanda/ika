@@ -50,7 +50,7 @@ async def buki(ctx):
 @bot.command()
 async def tes(ctx):
     await ctx.message.delete()
-    embed = discord.Embed(title = "ガチマッチ", color=0xf7e37e, timestamp=datetime.utcnow())
+    embed = discord.Embed(title = "ガチマッチ", color=0xf7e37e)
     embed.set_thumbnail(url="htpps://i.imgur.com/PzitKch.png")
     embed.add_field(name="Game mode",value="エリア",inline=False)
     embed.add_field(name="Maps",value="バッテラストリート\nBバスパーク",inline=False)
