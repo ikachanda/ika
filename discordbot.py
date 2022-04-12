@@ -9,11 +9,11 @@ import os
 bot = commands.Bot(command_prefix='')
 
 
-#@bot.event
-#async def on_command_error(ctx, error):
-#    orig_error = getattr(error, "original", error)
-#    error_msg = ''.join(traceback.TracebackException.from_exception(orig_error).format())
-#    await ctx.send(error_msg)
+# @bot.event
+# async def on_command_error(ctx, error):
+#     orig_error = getattr(error, "original", error)
+#     error_msg = ''.join(traceback.TracebackException.from_exception(orig_error).format())
+#     await ctx.send(error_msg)
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 dbname = os.path.join(BASE_DIR, "spl2.sqlite3")
@@ -47,6 +47,16 @@ async def buki(ctx):
     embed.set_footer(text = f"Requested by {ctx.author.name}",icon_url=ctx.author.avatar_url)
     await ctx.send(embed = embed)
 
+@bot.command()
+async def tes(ctx):
+    await ctx.message.delete()
+    embed = discord.Embed(title = "ガチマッチ", color=0xf7e37e, timestamp=datetime.utcnow())
+    embed.set_thumbnail(url="htpps://i.imgur.com/PzitKch.png")
+    embed.add_field(name="Game mode",value="エリア",inline=False)
+    embed.add_field(name="Maps",value="バッテラストリート\nBバスパーク",inline=False)
+    embed.add_field(name="Next Game Mode",value="ホコ",inline=False)
+    embed.add_field(name="Next Maps",value="ハコフグ倉庫\nショッツル鉱山",inline=False)
+    await ctx.send(embed = embed)
 
 token = getenv('DISCORD_BOT_TOKEN')
 bot.run(token)
