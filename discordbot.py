@@ -38,10 +38,12 @@ async def ap(ctx, *args):
         api.append(f'https://uniteapi.dev/p/{val}')
     await ctx.send("\n".join(api))
 
-@bot.command()
-async def te(ctx):
-    embed = discord.Embed(title = "スプラシューター", color=0xf7e37e, timestamp=datetime.utcnow())
-    embed.set_image(url = "https://i.imgur.com/PHP0G4f.png")
+@bot.command(name = "おぶき")
+async def buki(ctx):
+    await ctx.message.delete()
+    name, url = random_buki()
+    embed = discord.Embed(title = name, color=0xf7e37e, timestamp=datetime.utcnow())
+    embed.set_image(url = url)
     embed.set_footer(text = f"Requested by {ctx.author.name}",icon_url=ctx.author.avatar_url)
     await ctx.send(embed = embed)
 
