@@ -55,13 +55,13 @@ async def tes(ctx):
     await ctx.message.delete()
     req = urllib.request.urlopen('https://spla2.yuu26.com/schedule').read()
     req = json.loads(req.decode('utf-8'))
-    sp_json = req["result"]["gachi"]
+    gachi = req["result"]["gachi"]
     embed = discord.Embed(title = "ガチマッチ", color=0xf7e37e)
     embed.set_thumbnail(url = "https://i.imgur.com/PzitKch.png")
-    embed.add_field(name = "Game mode",value = sp_json[0]["rule"], inline=False)
-    embed.add_field(name = "Maps",value = f'{sp_json[0]["maps"][0]}\n{sp_json[0]["maps"][1]}', inline=False)
-    embed.add_field(name = "Next Game Mode",value = sp_json[1]["rule"], inline=False)
-    embed.add_field(name = "Next Maps",value = f'{sp_json[1]["maps"][0]}\n{sp_json[1]["maps"][1]}', inline=False)
+    embed.add_field(name = "Game mode",value = gachi[0]["rule"], inline=False)
+    embed.add_field(name = "Maps",value = f'{gachi[0]["maps"][0]}\n{gachi[0]["maps"][1]}', inline=False)
+    embed.add_field(name = "Next Game Mode",value = gachi[1]["rule"], inline=False)
+    embed.add_field(name = "Next Maps",value = f'{gachi[1]["maps"][0]}\n{gachi[1]["maps"][1]}', inline=False)
     await ctx.send(embed = embed)
 
 token = getenv('DISCORD_BOT_TOKEN')
