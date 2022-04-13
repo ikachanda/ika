@@ -29,7 +29,7 @@ def random_buki():
 
 @bot.command()
 async def ping(ctx):
-    if type(ctx.channel == discord.DMChannel)
+    if type(ctx.channel, discord.DMChannel)
 #        await ctx.message.delete()
         await ctx.author.send("ポンポーン")
 
