@@ -35,7 +35,7 @@ async def ping(ctx):
 
 @bot.command()
 async def ap(ctx, *args):
-    if (type(ctx.channel == discord.DMChannel)
+    if type(ctx.channel == discord.DMChannel)
 #    await ctx.message.delete()
         api = []
         for val in args:
