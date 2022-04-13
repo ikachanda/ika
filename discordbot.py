@@ -35,12 +35,11 @@ async def ping(ctx):
 
 @bot.command()
 async def ap(ctx, *args):
-    if type(ctx.channel == discord.DMChannel)
-#    await ctx.message.delete()
-        api = []
-        for val in args:
-            api.append(f'https://uniteapi.dev/p/{val}')
-        await ctx.author.send("\n".join(api))
+    await ctx.message.delete()
+    api = []
+    for val in args:
+        api.append(f'https://uniteapi.dev/p/{val}')
+    await ctx.send("\n".join(api))
 
 @bot.command(name = "おぶき")
 async def buki(ctx):
