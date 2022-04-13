@@ -30,8 +30,10 @@ def random_buki():
 @bot.command()
 async def ping(ctx):
     if isinstance(ctx.channel, discord.DMChannel):
-#        await ctx.message.delete()
         await ctx.author.send("ポンポーン")
+    else:
+        await ctx.message.delete()
+        await ctx.send("ポンポーン")
 
 @bot.command()
 async def ap(ctx, *args):
