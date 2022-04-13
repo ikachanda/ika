@@ -33,6 +33,7 @@ async def ping(ctx):
 
 @bot.command()
 async def ap(ctx, *args):
+    await ctx.message.delete()
     api = []
     for val in args:
         api.append(f'https://uniteapi.dev/p/{val}')
