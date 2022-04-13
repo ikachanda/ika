@@ -54,7 +54,7 @@ async def buki(ctx):
 async def tes(ctx):
     await ctx.message.delete()
     req = urllib.request.urlopen('https://spla2.yuu26.com/schedule').read()
-    req = json.loads(resp.decode('utf-8'))
+    req = json.loads(req.decode('utf-8'))
     sp_json = req["result"]["gachi"]
     await ctx.send(sp_json)
 #    embed = discord.Embed(title = ガチマッチ, color=0xf7e37e)
