@@ -45,7 +45,7 @@ async def ap(ctx, *args):
 async def buki(ctx):
     await ctx.message.delete()
     name, url = random_buki()
-    embed = discord.Embed(title = name, color=0xf7e37e, timestamp=datetime.utcnow())
+    embed = discord.Embed(title = name, color=0x5f78f7, timestamp=datetime.utcnow())
     embed.set_image(url = url)
     embed.set_footer(text = f"Requested by {ctx.author.name}",icon_url=ctx.author.avatar_url)
     await ctx.send(embed = embed)
@@ -56,7 +56,7 @@ async def tes(ctx):
     req = urllib.request.urlopen('https://spla2.yuu26.com/schedule').read()
     req = json.loads(req.decode('utf-8'))
     gachi = req["result"]["gachi"]
-    embed = discord.Embed(title = "ガチマッチ", color=0xf7e37e)
+    embed = discord.Embed(title = "ガチマッチ", color=0xfd2008)
     embed.set_thumbnail(url = "https://i.imgur.com/PzitKch.png")
     embed.add_field(name = "Game mode",value = gachi[0]["rule"], inline=False)
     embed.add_field(name = "Maps",value = f'{gachi[0]["maps"][0]}\n{gachi[0]["maps"][1]}', inline=False)
