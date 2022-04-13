@@ -56,7 +56,7 @@ async def tes(ctx):
     req = urllib.request.urlopen('https://spla2.yuu26.com/schedule').read()
     req = json.loads(req.decode('utf-8'))
     sp_json = req["result"]["gachi"]
-    embed = discord.Embed(title = ガチマッチ, color=0xf7e37e)
+    embed = discord.Embed(title = "ガチマッチ", color=0xf7e37e)
     embed.set_thumbnail(url = "https://i.imgur.com/PzitKch.png")
     embed.add_field(name = "Game mode",value = sp_json[0]["rule"], inline=False)
     embed.add_field(name = "Maps",value = f'{sp_json[0]["maps"][0]}\n{sp_json[0]["maps"][1]}', inline=False)
