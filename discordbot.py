@@ -5,6 +5,8 @@ import discord
 from datetime import datetime
 import sqlite3
 import os
+import urllib.request
+import json
 
 bot = commands.Bot(command_prefix='')
 
@@ -51,12 +53,15 @@ async def buki(ctx):
 @bot.command()
 async def tes(ctx):
     await ctx.message.delete()
-    embed = discord.Embed(title = "ガチマッチ", color=0xf7e37e)
-    embed.set_thumbnail(url="https://i.imgur.com/PzitKch.png")
-    embed.add_field(name="Game mode",value="エリア",inline=False)
-    embed.add_field(name="Maps",value="バッテラストリート\nBバスパーク",inline=False)
-    embed.add_field(name="Next Game Mode",value="ホコ",inline=False)
-    embed.add_field(name="Next Maps",value="ハコフグ倉庫\nショッツル鉱山",inline=False)
+    req = urllib.request.urlopen('https://spla2.yuu26.com/schedule').read()
+    req = json.loads(resp.decode('utf-8'))
+    sp_json = req["result"]["gachi"]
+    embed = discord.Embed(title = ガチマッチ, color=0xf7e37e)
+    embed.set_thumbnail(url = "https://i.imgur.com/PzitKch.png")
+    embed.add_field(name = "Game mode",value = sp_json[0]["rule"], inline=False)
+    embed.add_field(name = "Maps",value = f"{sp_json[0]["maps"][0]}\n{sp_json[0]["maps"][1]}", inline=False)
+    embed.add_field(name = "Next Game Mode",value = sp_json[1]["rule"], inline=False)
+    embed.add_field(name = "Next Maps",value = f"{sp_json[1]["maps"][0]}\n{sp_json[1]["maps"][1]}", inline=False)
     await ctx.send(embed = embed)
 
 token = getenv('DISCORD_BOT_TOKEN')
