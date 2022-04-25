@@ -11,7 +11,6 @@ import json
 
 bot = commands.Bot(command_prefix='')
 
-
 # @bot.event
 # async def on_command_error(ctx, error):
 #     orig_error = getattr(error, "original", error)
