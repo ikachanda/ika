@@ -34,7 +34,7 @@ async def ping(ctx):
     raw_html = data.read()
     html = html.fromstring(str(raw_html))
     title = html.xpath("/html/body/h1")
-        await ctx.send(title)
+    await ctx.send(title)
 
 @bot.command()
 async def ap(ctx, *args):
