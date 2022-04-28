@@ -28,7 +28,7 @@ def random_buki():
     return (name, url)
 
 @bot.command()
-async def ping(ctx):
+async def pin(ctx):
     URL = "http://www.example.com"
     data = request.urlopen(URL)
     raw_html = data.read()
