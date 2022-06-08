@@ -6,7 +6,7 @@ from datetime import datetime
 import sqlite3
 import os
 import urllib.request
-from lxml import html
+# from lxml import html
 import json
 
 bot = commands.Bot(command_prefix='')
@@ -27,14 +27,14 @@ def random_buki():
     name, url = cur.fetchone()
     return (name, url)
 
-@bot.command()
-async def pin(ctx):
-    URL = "http://www.example.com"
-    data = request.urlopen(URL)
-    raw_html = data.read()
-    html = html.fromstring(str(raw_html))
-    title = html.xpath("/html/body/h1")
-    await ctx.send(title)
+#@bot.command()
+#async def pin(ctx):
+#    URL = "http://www.example.com"
+#    data = request.urlopen(URL)
+#    raw_html = data.read()
+#    html = html.fromstring(str(raw_html))
+#    title = html.xpath("/html/body/h1")
+#    await ctx.send(title)
 
 @bot.command()
 async def ap(ctx, *args):
