@@ -6,7 +6,7 @@ from datetime import datetime
 import sqlite3
 import os
 import urllib.request
-from lxml import html
+#from lxml import html
 import json
 
 bot = commands.Bot(command_prefix='')
